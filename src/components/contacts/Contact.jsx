@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { Consumer } from "../context";
+import { Consumer } from "../../context";
 
 class Contact extends Component {
     state = {
@@ -40,11 +40,9 @@ class Contact extends Component {
                                         float: "right",
                                         color: "#dc3545"
                                     }}
-                                    onClick={this.onDeleteContact.bind(
-                                        this,
-                                        id,
-                                        dispatch
-                                    )}
+                                    onClick={() =>
+                                        this.onDeleteContact(id, dispatch)
+                                    }
                                 />
                             </h4>
                             {showContactDetails ? (
