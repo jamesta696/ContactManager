@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Contacts from "./components/Contacts";
+import { Provider } from "./context";
 
 import Header from "./components/Header";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -7,12 +8,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
 class App extends Component {
     render() {
         return (
-            <div className="App">
-                <Header branding="Contact Manager" />
-                <div className="container">
-                    <Contacts />
+            <Provider>
+                <div className="App">
+                    <Header branding="Contact Manager" />
+                    <div className="container">
+                        <Contacts />
+                    </div>
                 </div>
-            </div>
+            </Provider>
         );
     }
 }
