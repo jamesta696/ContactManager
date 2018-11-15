@@ -63,7 +63,7 @@ class AddContact extends Component {
                 {value => {
                     const { dispatch } = value;
                     return (
-                        <div className="card mb-3">
+                        <div className="card mb-3 mt-3">
                             <div className="card-header">Add Contact</div>
                             <div className="card-body">
                                 <form
