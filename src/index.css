@@ -86,9 +86,7 @@ form .btn.btn-light.btn-block:hover {
     .container .display-4 {
         font-size: 2.5rem;
     }
-}
 
-@media screen and (min-width: 576px) {
     .navbar-expand-sm .navbar-collapse {
         justify-content: flex-end;
     }

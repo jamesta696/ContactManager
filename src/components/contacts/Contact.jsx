@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Consumer } from "../../context";
+import axios from "axios";
 
 class Contact extends Component {
     constructor() {
@@ -23,9 +24,28 @@ class Contact extends Component {
         this.onToggleSortIcon(e);
     };
 
-    onDeleteContact = (id, dispatch) => {
-        dispatch({ type: "DELETE_CONTACT", payload: id });
-        console.log("CONTACT REMOVED - ", this.props.contact);
+    // Mimic deletion on BackEnd using HTTP Request, only works on provided default contacts
+    onDeleteContact = async (id, dispatch) => {
+        try {
+            await axios.delete(
+                `https://jsonplaceholder.typicode.com/users/${id}`
+            );
+
+            dispatch({
+                type: "DELETE_CONTACT",
+                payload: id
+            });
+        } catch (e) {
+            dispatch({
+                type: "DELETE_CONTACT",
+                payload: id
+            });
+        }
+
+        console.log(
+            "[Client Interface] - CONTACT REMOVED - ",
+            this.props.contact
+        );
     };
 
     onToggleSortIcon = e => {
@@ -48,7 +68,7 @@ class Contact extends Component {
                     const { dispatch } = value;
                     return (
                         <div className="card card-body mb-3">
-                            <h4>
+                            <h4 style={{ fontSize: "15px" }}>
                                 {name}{" "}
                                 <i
                                     onClick={this.onShowContactDetails}

@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { Consumer } from "../../context";
 import TextInputGroup from "../layouts/TextInputGroup";
-import uuid from "uuid";
+// import uuid from "uuid";
+import axios from "axios";
 
 class AddContact extends Component {
     state = {
@@ -11,7 +12,7 @@ class AddContact extends Component {
         errors: {}
     };
 
-    onFormSubmit = (dispatch, e) => {
+    onFormSubmit = async (dispatch, e) => {
         e.preventDefault(e);
         if (!this.handlePhoneValidation()) {
             alert("Enter a valid phone number");
@@ -20,18 +21,28 @@ class AddContact extends Component {
 
         const { name, email, phone } = this.state;
         const newContact = {
-            id: uuid(),
             name,
             email,
             phone
         };
 
-        dispatch({ type: "ADD_CONTACT", payload: newContact });
+        const response = await axios.post(
+            "https://jsonplaceholder.typicode.com/users",
+            newContact
+        );
+
+        dispatch({
+            type: "ADD_CONTACT",
+            payload: response.data,
+            log: console.log("[Back-End Database] - Add Request - ", response)
+        });
+
         this.setState({
             name: "",
             email: "",
             phone: ""
         });
+
         console.log("CONTACT ADDED - ", newContact);
         this.props.history.push("/");
     };

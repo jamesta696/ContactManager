@@ -19,13 +19,20 @@ const About = () => {
                     <i className="fas fa-angle-right" /> ReactJS
                 </li>
                 <li className="nav-item lead">
+                    <i className="fas fa-angle-right" /> JSX Components
+                </li>
+                <li className="nav-item lead">
                     <i className="fas fa-angle-right" /> React Router 4
                 </li>
                 <li className="nav-item lead">
                     <i className="fas fa-angle-right" /> React Context API
                 </li>
                 <li className="nav-item lead">
-                    <i className="fas fa-angle-right" /> JSX Components
+                    <i className="fas fa-angle-right" /> JSONPlaceholder Fake
+                    REST API
+                </li>
+                <li className="nav-item lead">
+                    <i className="fas fa-angle-right" /> Axios HTTP Client
                 </li>
                 <li className="nav-item lead">
                     <i className="fas fa-angle-right" /> FontAwesome Icons
