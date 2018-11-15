@@ -70,10 +70,12 @@ class Contact extends Component {
                             {showContactDetails ? (
                                 <ul className="list-group">
                                     <li className="list-group-item">
-                                        Email: {email}
+                                        <i className="fas fa-envelope" /> Email:{" "}
+                                        {email}
                                     </li>
                                     <li className="list-group-item">
-                                        Phone: {phone}
+                                        <i className="fas fa-phone" /> Phone:{" "}
+                                        {phone}
                                     </li>
                                 </ul>
                             ) : null}
