@@ -10,15 +10,19 @@ class Contacts extends Component {
                     const { contacts } = value;
                     return (
                         <React.Fragment>
-                            <h1
-                                className="display-4 mb-2"
-                                style={{ fontSize: "2.5rem" }}
-                            >
-                                Contacts List
-                            </h1>
-                            {contacts.map(contact => (
-                                <Contact key={contact.id} contact={contact} />
-                            ))}
+                            <div className="card mt-3">
+                                <div className="card-header">
+                                    <i className="fas fa-users" /> Contacts List
+                                </div>
+                                <div className="card-body">
+                                    {contacts.map(contact => (
+                                        <Contact
+                                            key={contact.id}
+                                            contact={contact}
+                                        />
+                                    ))}
+                                </div>
+                            </div>
                         </React.Fragment>
                     );
                 }}

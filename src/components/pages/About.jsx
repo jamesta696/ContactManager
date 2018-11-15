@@ -3,9 +3,7 @@ import React from "react";
 const About = () => {
     return (
         <div>
-            <h1 className="display-4" style={{ fontSize: "2.5rem" }}>
-                About Contact Manager
-            </h1>
+            <h1 className="display-4">About Contact Manager</h1>
             <p className="lead">Simple application to manage contacts using:</p>
             <ul className="navbar-nav mr-auto">
                 <li className="nav-item lead">
@@ -21,13 +19,16 @@ const About = () => {
                     <i className="fas fa-angle-right" /> ReactJS
                 </li>
                 <li className="nav-item lead">
-                    <i className="fas fa-angle-right" /> JSX
-                </li>
-                <li className="nav-item lead">
-                    <i className="fas fa-angle-right" /> React Router
+                    <i className="fas fa-angle-right" /> React Router 4
                 </li>
                 <li className="nav-item lead">
                     <i className="fas fa-angle-right" /> React Context API
+                </li>
+                <li className="nav-item lead">
+                    <i className="fas fa-angle-right" /> JSX Components
+                </li>
+                <li className="nav-item lead">
+                    <i className="fas fa-angle-right" /> FontAwesome Icons
                 </li>
                 <li className="nav-item lead">
                     <i className="fas fa-angle-right" /> BootStrap 4
@@ -35,9 +36,6 @@ const About = () => {
                 <li className="nav-item lead">
                     <i className="fas fa-angle-right" /> PropTypes Typechecking
                     Library
-                </li>
-                <li className="nav-item lead">
-                    <i className="fas fa-angle-right" /> FontAwesome Icons
                 </li>
                 <li className="nav-item lead">
                     <i className="fas fa-angle-right" /> UUID Random ID

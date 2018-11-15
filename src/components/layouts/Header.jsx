@@ -3,9 +3,11 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/js/bootstrap.min.js";
 import "bootstrap/dist/css/bootstrap.min.css";
+import $ from "jquery";
 
 const Header = props => {
     const { branding } = props;
+
     return (
         <div>
             <nav className="navbar navbar-expand-sm navbar-dark bg-danger mb-3 py-1">
@@ -21,7 +23,7 @@ const Header = props => {
                     <span className="navbar-toggler-icon" />
                 </button>
                 <Link to="/" className="navbar-brand">
-                    {branding}
+                    <i className="far fa-address-book" /> {branding}
                 </Link>
 
                 <div
