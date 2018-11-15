@@ -13,14 +13,46 @@ code {
         monospace;
 }
 
-form .btn.btn-dark.btn-block {
+.card .card-header {
     background-color: #dc3545;
+    font-weight: 600;
+    color: #fff;
+    border-bottom: 0;
+}
+
+form .btn.btn-light.btn-block {
+    background-color: #dc3545;
+    color: #fff;
     border: 0;
     transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
     font-weight: 600;
 }
 
-form .btn.btn-dark.btn-block:hover {
-    transform: scale(1.1);
+form .btn.btn-light.btn-block:hover {
     transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    background-color: gainsboro;
+    color: slategray;
+}
+
+.card .fas .fa-sort-down,
+.card .fas.fa-sort-up {
+    transition: all 0.3s ease-in-out;
+}
+
+.card .fas.fa-sort-down:hover,
+.card .fas.fa-sort-up:hover {
+    transition: all 0.3s ease-in-out;
+    color: #dc3545;
+}
+
+.card .list-group .list-group-item {
+    background-color: #f8f8ff;
 }

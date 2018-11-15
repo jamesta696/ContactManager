@@ -7,11 +7,16 @@ class AddContact extends Component {
     state = {
         name: "",
         email: "",
-        phone: ""
+        phone: "",
+        errors: {}
     };
 
     onFormSubmit = (dispatch, e) => {
         e.preventDefault(e);
+        if (!this.handlePhoneValidation()) {
+            alert("Enter a valid phone number");
+            return false;
+        }
 
         const { name, email, phone } = this.state;
         const newContact = {
@@ -27,12 +32,27 @@ class AddContact extends Component {
             email: "",
             phone: ""
         });
-
         console.log("CONTACT ADDED - ", newContact);
+        this.props.history.push("/");
     };
 
     onInputChange = e => {
         this.setState({ [e.target.name]: e.target.value });
+    };
+
+    handlePhoneValidation = e => {
+        let fields = this.state;
+        let errors = {};
+        let formIsValid = true;
+        var phoneno = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+
+        if (!fields["phone"].match(phoneno)) {
+            formIsValid = false;
+            errors["phone"] = "Only Numbers";
+        }
+
+        this.setState({ errors: errors });
+        return formIsValid;
     };
 
     render() {
@@ -72,6 +92,7 @@ class AddContact extends Component {
                                     <TextInputGroup
                                         label="Phone"
                                         name="phone"
+                                        type="tel"
                                         placeholder="Enter Phone..."
                                         value={phone}
                                         onChange={this.onInputChange}
@@ -80,7 +101,7 @@ class AddContact extends Component {
                                     <input
                                         type="submit"
                                         value="Add Contact"
-                                        className="btn btn-dark btn-block"
+                                        className="btn btn-light btn-block"
                                     />
                                 </form>
                             </div>
