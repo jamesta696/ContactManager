@@ -44,10 +44,6 @@ const About = () => {
                     <i className="fas fa-angle-right" /> PropTypes Typechecking
                     Library
                 </li>
-                <li className="nav-item lead">
-                    <i className="fas fa-angle-right" /> UUID Random ID
-                    Generator
-                </li>
             </ul>
             <p className="text-secondary">Contact Manager Version 1.0.0</p>
         </div>

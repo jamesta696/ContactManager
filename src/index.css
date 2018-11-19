@@ -57,6 +57,10 @@ form .btn.btn-light.btn-block:hover {
     background-color: #f8f8ff;
 }
 
+.card-body h4 {
+    font-weight: 600;
+}
+
 .navbar-dark .navbar-toggler {
     border: 0;
 }

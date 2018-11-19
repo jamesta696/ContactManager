@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Consumer } from "../../context";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 class Contact extends Component {
@@ -25,12 +26,12 @@ class Contact extends Component {
     };
 
     // Mimic deletion on BackEnd using HTTP Request, only works on provided default contacts
+    // try(){} catch(){} to mimic deletion on manually created contacts
     onDeleteContact = async (id, dispatch) => {
         try {
             await axios.delete(
                 `https://jsonplaceholder.typicode.com/users/${id}`
             );
-
             dispatch({
                 type: "DELETE_CONTACT",
                 payload: id
@@ -86,6 +87,16 @@ class Contact extends Component {
                                         this.onDeleteContact(id, dispatch)
                                     }
                                 />
+                                <Link to={`/contact/edit/${id}`}>
+                                    <i
+                                        className="fas fa-pencil-alt"
+                                        style={{
+                                            float: "right",
+                                            marginRight: "1rem",
+                                            color: "#dc3545"
+                                        }}
+                                    />
+                                </Link>
                             </h4>
                             {showContactDetails ? (
                                 <ul className="list-group">

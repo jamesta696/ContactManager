@@ -10,7 +10,7 @@ class Contacts extends Component {
                     const { contacts } = value;
                     return (
                         <React.Fragment>
-                            <div className="card mt-3">
+                            <div className="card mt-3 mb-3">
                                 <div className="card-header">
                                     <i className="fas fa-users" /> Contacts List
                                 </div>
